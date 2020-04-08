@@ -2,27 +2,29 @@
 
 namespace App;
 
+use Exception;
+
 class Calculate
 {
-    public function add ($a, $b)
+    public static function add ($a, $b)
     {
         return $a + $b;
     }
 
-    public function minus ($a, $b)
+    public static function minus ($a, $b)
     {
         return $a - $b;
     }
 
-    public function multiply ($a, $b)
+    public static function multiply ($a, $b)
     {
         return $a * $b;
     }
 
-    public function divide ($a, $b)
+    public static function divide ($a, $b)
     {
         if ($b === 0) {
-            die();
+            throw new Exception('Impossible de diviser par zero');
         }
         return $a / $b;
     }
