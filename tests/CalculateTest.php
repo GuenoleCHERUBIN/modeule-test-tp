@@ -18,21 +18,21 @@ class CalculateTest extends \PHPUnit\Framework\TestCase
 
     public function testMinus()
     {
-        $calculate = Calculate::add($this->a, $this->b);
+        $calculate = Calculate::minus($this->a, $this->b);
 
         $this->assertEquals( $this->a -  $this->b, $calculate);
     }
 
     public function testMultiply()
     {
-        $calculate = Calculate::add($this->a, $this->b);
+        $calculate = Calculate::multiply($this->a, $this->b);
 
         $this->assertEquals( $this->a * $this->b, $calculate);
     }
 
     public function testDivision()
     {
-        $calculate = Calculate::add($this->a, $this->b);
+        $calculate = Calculate::divide($this->a, $this->b);
 
         $this->assertEquals( $this->a /  $this->b, $calculate);
     }
