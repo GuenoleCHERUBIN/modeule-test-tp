@@ -105,24 +105,47 @@ class  User
         return $this;
     }
 
-    public function isValid(): bool
+    public function isFirstnameValid(): bool
     {
-
         if (empty($this->firstname)) {
             return false;
         }
+        return true;
+    }
 
+    public function isLastnameValid(): bool
+    {
         if (empty($this->lastname)) {
             return false;
         }
+        return true;
+    }
 
+    public function isAgeValid(): bool
+    {
         if ($this->age < 13) {
             return false;
         }
+        return true;
+    }
 
+    public function isEmailValid(): bool
+    {
         if (!filter_var($this->email, FILTER_VALIDATE_EMAIL)) {
             return false;
         }
+        return true;
+    }
+
+    public function isValid(): bool
+    {
+        $this->isFirstnameValid();
+
+        $this->isLastnameValid();
+
+        $this->isAgeValid();
+
+        $this->isEmailValid();
 
         return true;
     }
